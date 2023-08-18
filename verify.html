@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 5 CDN link to add icones -->
+    <title>Verify Email</title>
+    <!-- Linking .css file with HTML page -->
+     <script>
+      function validateform()
+      {
+          
+          var cc='{{code}}';
+         
+          var abc= document.getElementById("codee").value;
+        if(cc==abc)
+        {
+          return true;
+        }
+        else {
+          alert("Incorrect Code Verification");
+          return false;
+        }
+        
+      }
+  </script>
+</head>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Verify Your Email </h2>
+      
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+      </div>
+  
+      <!-- Login Form -->
+      <form onsubmit="return validateform()" action="validate" name="vali"  method="POST">
+        {% csrf_token%}
+        <input type="number"  class="fadeIn second"  placeholder="enter verification code" id="codee" name="code" required>
+        <input type="submit" class="fadeIn fourth" value="Verify">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <!-- <div id="formFooter">
+        <a class="underlineHover" href="index.html">Go to login page</a>
+      </div> -->
+    </div>
+  </div>

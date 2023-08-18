@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- {% load static %} -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Imaginative Website</title>
+    <title>Parallax Scrolling</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+   <title>Dynamic Search Bar</title>
+   <style>
+    .text-zoom {
+        transition: transform 0.3s ease, color 0.3s ease; /* Add color transition for smoother color change */
+    }
+    .text-zoom:hover {
+        transform: scale(1.03); /* Adjust the scale value as needed */
+        color: #000000;
+        font: semibold
+    }
+</style>
+</head>
+<body>
+
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <img class="rounded-lg shadow-2xl transform rotate-[-45deg] transform scale-x-[-1] object-cover object-center rounded-2xl shadow-xl" alt="hero" src="/img/MCDA.png">
+    </div>
+    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+      <h1 class="p-12 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Confused about what is MCDA?
+      </h1>
+      <p class="p-10 text-justify font-normal mb-8 leading-relaxed text-zoom">Multiple-criteria decision-making (MCDM) or multiple-criteria decision analysis (MCDA) is a sub-discipline of operations research that explicitly evaluates multiple conflicting criteria in decision making (both in daily life and in settings such as business, government and medicine). MCDA is a general term for methods developed to support complex decision-making situations with multiple and often conflicting objectives that stakeholders groups and decision-makers value differently. In environmental management, MCDA methods are increasingly used to structure participatory integrated assessment and valuation processes which combine information about decision alternatives and their consequences with information about stakeholder and/or decision-maker values and preferences.</p>
+      <div class="flex justify-center">
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+  </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quiz Assessment</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+  <div class="max-w-md bg-white p-6  rounded-lg shadow-md">
+    <h1 class="text-2xl font-semibold mb-4">Quiz Assessment</h1>
+    <div id="questionContainer">
+      <p class="text-lg mb-2" id="question">Question 1: What is 2 + 2?</p>
+      <input type="radio" name="answer" value="1" class="mr-1" id="answer1">
+      <label for="answer1">3</label><br>
+      <input type="radio" name="answer" value="2" class="mr-1" id="answer2">
+      <label for="answer2">4</label><br>
+      <input type="radio" name="answer" value="3" class="mr-1" id="answer3">
+      <label for="answer3">5</label><br>
+    </div>
+    <div class="mt-4 flex justify-between">
+      <button id="prevButton" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md" onclick="prevQuestion()">Previous</button>
+      <button id="nextButton" class="px-4 py-2 bg-blue-500 text-white rounded-md" onclick="nextQuestion()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { question: "What is 2 + 2?", answers: ["3", "4", "5"], correct: 1 },
+      { question: "Which planet is known as the Red Planet?", answers: ["Venus", "Mars", "Jupiter"], correct: 1 },
+      // Add more questions here...
+    ];
+
+    let currentQuestionIndex = 0;
+
+    const questionContainer = document.getElementById('questionContainer');
+    const questionElement = document.getElementById('question');
+    const answerElements = document.getElementsByName('answer');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    function updateQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      questionElement.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+      answerElements.forEach((element, index) => {
+        element.value = index;
+        element.checked = false;
+      });
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        updateQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        updateQuestion();
+      }
+    }
+
+    updateQuestion();
+  </script>
+  <div id="resultContainer" class="hidden">
+    <h2 class="text-xl font-semibold mb-2">Quiz Results</h2>
+    <p id="score"></p>
+  </div>
+  
+</body>
+</html>

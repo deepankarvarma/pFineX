@@ -1,0 +1,15 @@
+<ul>
+    {% for news_item in news_list %}
+        <li>
+            <strong>{{ forloop.counter }}. {{ news_item.title }}</strong> 
+            <a href="{{ news_item.source }}">{{news_item.source }}</a>
+        </li>
+    {% endfor %}
+           </ul><ul>
+    {% for news_item in news_list %}
+        <li>
+            <strong>{{ forloop.counter }}. {{ news_item.title }}</strong> 
+            <a href="{{ news_item.source }}">{{news_item.source }}</a>
+        </li>
+    {% endfor %}
+           </ul>
